@@ -97,6 +97,9 @@ const (
 	v3GuideQuery  = "/v3/smartguide/guides"           // 服务人员查询 GET
 	v3GuideUpdate = "/v3/smartguide/guides/%s"        // guide_id 服务人员信息更新 PATCH
 
+	// 扣款服务
+	v3ContractPaymentNotify = "v3/papay/contracts/%s/notify" //预扣费通知API
+
 	// 智慧商圈
 	v3BusinessPointsSync      = "/v3/businesscircle/points/notify"          // 商圈积分同步 POST
 	v3BusinessAuthPointsQuery = "/v3/businesscircle/user-authorizations/%s" // openid 商圈积分授权查询 GET

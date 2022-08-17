@@ -2741,3 +2741,8 @@ type BankBranchInfo struct {
 	BankBranchName string `json:"bank_branch_name"` // 开户银行支行名称
 	BankBranchId   string `json:"bank_branch_id"`   // 开户银行支行联行号
 }
+
+// ContractPaymentNotifyRsp 预扣费通知Rsp
+type ContractPaymentNotifyRsp struct {
+	Code int `json:"-"`
+}

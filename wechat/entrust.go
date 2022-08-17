@@ -82,3 +82,21 @@ func (w *Client) EntrustPaying(ctx context.Context, bm gopay.BodyMap) (wxRsp *En
 	}
 	return wxRsp, nil
 }
+
+// EntrustDelete 申请解约
+// 文档地址：https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter3_9.shtml
+func (w *Client) EntrustDelete(ctx context.Context, bm gopay.BodyMap) (wxRsp *EntrustDeleteResponse, err error) {
+	err = bm.CheckEmptyError("contract_id", "contract_termination_remark", "version")
+	if err != nil {
+		return nil, err
+	}
+	bs, err := w.doProdPost(ctx, bm, entrustDelete, nil)
+	if err != nil {
+		return nil, err
+	}
+	wxRsp = new(EntrustDeleteResponse)
+	if err = xml.Unmarshal(bs, wxRsp); err != nil {
+		return nil, fmt.Errorf("[%w]: %v, bytes: %s", gopay.UnmarshalErr, err, string(bs))
+	}
+	return wxRsp, nil
+}

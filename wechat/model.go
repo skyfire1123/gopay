@@ -469,6 +469,20 @@ type EntrustPayingResponse struct {
 	OutTradeNo             string `xml:"out_trade_no,omitempty" json:"out_trade_no,omitempty"`
 }
 
+type EntrustDeleteResponse struct {
+	ReturnCode   string `xml:"return_code,omitempty" json:"return_code,omitempty"`
+	ReturnMsg    string `xml:"return_msg,omitempty" json:"return_msg,omitempty"`
+	ResultCode   string `xml:"result_code,omitempty" json:"result_code,omitempty"`
+	MchId        string `xml:"mch_id,omitempty" json:"mch_id,omitempty"`
+	Appid        string `xml:"appid,omitempty" json:"appid,omitempty"`
+	ContractID   string `xml:"contract_id,omitempty" json:"contract_id,omitempty"`
+	PlanID       string `xml:"plan_id,omitempty" json:"plan_id,omitempty"`
+	ContractCode string `xml:"contract_code,omitempty" json:"contract_code,omitempty"`
+	Sign         string `xml:"sign,omitempty" json:"sign,omitempty"`
+	ErrCode      string `xml:"err_code,omitempty" json:"err_code,omitempty"`
+	ErrCodeDes   string `xml:"err_code_des,omitempty" json:"err_code_des,omitempty"`
+}
+
 type getSignKeyResponse struct {
 	ReturnCode     string `xml:"return_code,omitempty" json:"return_code,omitempty"`
 	ReturnMsg      string `xml:"return_msg,omitempty" json:"return_msg,omitempty"`
